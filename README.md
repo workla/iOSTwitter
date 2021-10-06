@@ -23,4 +23,15 @@ The following **bonus** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+
+All Basic User Stories:<br>
+<img src='http://g.recordit.co/NKXgsYQjDO.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+
+Pull to Refresh:<br>
+<img src='http://g.recordit.co/brMTXUphQU.gif' title='Pull to refresh' width='' alt='pull to refresh' />
+
+
+Infinite Scroll (15 tweets loaded initially, with 10 tweets added every time end of page is reached):<br>
+<img src='http://g.recordit.co/M94joIC7zq.gif' title='Infinite Scroll' width='' alt='infinite scroll' />
