@@ -30,8 +30,8 @@ All Basic User Stories:<br>
 
 
 Pull to Refresh:<br>
-<img src='http://g.recordit.co/brMTXUphQU.gif' title='Pull to refresh' width='' alt='pull to refresh' />
+<img src='http://g.recordit.co/pJxVKamh57.gif' title='Pull to refresh' width='' alt='pull to refresh' />
 
 
 Infinite Scroll (15 tweets loaded initially, with 10 tweets added every time end of page is reached):<br>
-<img src='http://g.recordit.co/M94joIC7zq.gif' title='Infinite Scroll' width='' alt='infinite scroll' />
+<img src='http://g.recordit.co/emzCa8B0kU.gif' title='Infinite Scroll' width='' alt='infinite scroll' />
