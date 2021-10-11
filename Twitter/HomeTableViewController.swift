@@ -17,9 +17,16 @@ class HomeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadTweets()
         myRefreshControl.addTarget(self, action: #selector(loadTweets), for: .valueChanged)
         tableView.refreshControl = myRefreshControl
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 150
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.loadTweets()
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -29,7 +36,7 @@ class HomeTableViewController: UITableViewController {
     }
     
     @objc func loadTweets(){
-        numberOfTweets = 15
+        numberOfTweets = 5
         
         let getTweetsURL = "https://api.twitter.com/1.1/statuses/home_timeline.json"
         let params = ["count": numberOfTweets]
@@ -49,7 +56,7 @@ class HomeTableViewController: UITableViewController {
     }
     
     func loadMoreTweets(){
-        numberOfTweets = numberOfTweets + 10
+        numberOfTweets = numberOfTweets + 5
         
         let getTweetsURL = "https://api.twitter.com/1.1/statuses/home_timeline.json"
         let moreTweetsParams = ["count": numberOfTweets]
@@ -89,18 +96,19 @@ class HomeTableViewController: UITableViewController {
             cell.profileImageView.image = UIImage(data: imageData)
         }
         
+        cell.setFavorited(tweetArray[indexPath.row]["favorited"] as! Bool)
+        cell.tweetID = tweetArray[indexPath.row]["id"] as! Int
+        cell.setRetweeted(tweetArray[indexPath.row]["retweeted"] as! Bool)
         return cell
     }
     
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return tweetArray.count
     }
 
